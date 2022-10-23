@@ -1,23 +1,25 @@
-'use strict';
-
-let fileUploadButton = document.getElementById("fileupload");
-fileUploadButton.onclick = () => {
-  alert("This should be a file dialog");
-};
-
 let txtBox = document.getElementById("txtinput");
 
-let txtInpContButton = document.getElementById("txtinpcont");
-txtInpContButton.onclick = () => {
+let studySetData = sessionStorage.getItem("studySetData");
+if (studySetData != null) {
+  txtBox.value = studySetData
+}
+
+let continueButton = document.getElementById("continue");
+continueButton.onclick = () => {
   sessionStorage.setItem("studySetData", txtBox.value);
   window.location.href = "overview.html";
 };
 
-let file = document.getElementById("myfile");
-var reader = new FileReader();
-reader.onload = function (evt) {
-  alert(evt.target.result);
-}
-reader.onerror = function (evt) {
-  alert("error reading file");
-}
+let file = document.getElementById("uploadedfile");
+file.value = ""
+file.addEventListener("change", (event) => {
+  console.log(event.target);
+  if (event.target.files.length >= 1) {
+    let reader = new FileReader();
+    reader.addEventListener('load', (event) => {
+      txtBox.value = event.target.result
+    });
+    reader.readAsText(event.target.files[0]);
+  }
+})

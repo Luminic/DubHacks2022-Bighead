@@ -16,23 +16,16 @@
     <p>Upload study set: </p>
 
     <div>
-      <form action="/action_page.php" 
-        enctype="multipart/form-data">
-        
-        <label for="myfile">Select a file:</label>
-        <input type="file" id="myfile" name="myfile" />
-        <br /><br />
-        <input type="submit" />
-     </form>
+      <input id="uploadedfile" type="file">
     </div>
 
-<div>
-   <p>or copy/paste text:</p>
-    <textarea id="txtinput" cols="40" rows="5"></textarea>
-</div>
-<div>
-   <button id="txtinpcont">continue</button>
-</div>
+    <div>
+      <p>or copy/paste text:</p>
+        <textarea id="txtinput" cols="40" rows="5"></textarea>
+    </div>
+    <div>
+      <button id="continue">continue</button>
+    </div>
     <script src="scripts/main.js"></script>
   </body>
 </html>
