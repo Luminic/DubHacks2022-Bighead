@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 'use strict';
 
 let fileUploadButton = document.getElementById("fileupload");
 fileUploadButton.onclick = () => {
   alert("This should be a file dialog");
 };
-=======
->>>>>>> 7cf7e5ac154bdf73f291ad754e553ee114309b85
 
 let txtBox = document.getElementById("txtinput");
 
