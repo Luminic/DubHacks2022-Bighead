@@ -1,3 +1,5 @@
+'use strict';
+
 let fileUploadButton = document.getElementById("fileupload");
 fileUploadButton.onclick = () => {
   alert("This should be a file dialog");

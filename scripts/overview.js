@@ -1,3 +1,5 @@
+'use strict';
+
 studySetData = sessionStorage.getItem("studySetData");
 
 let learnButton = document.getElementById("learn");
